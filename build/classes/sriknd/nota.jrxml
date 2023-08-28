@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="198" pageHeight="425" columnWidth="187" leftMargin="6" rightMargin="5" topMargin="33" bottomMargin="33" uuid="9f374433-9072-4f0b-a4dc-eca1602fa6d3">
+	<property name="ireport.zoom" value="4.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="347"/>
+	<parameter name="nota" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select pemesanan.no_pemesanan, pemesanan.tgl_pemesanan, pemesanan.total_item, pemesanan.bayar_awal, pemesanan.kurang, pemesanan.total_pembayaran, pemesanan.kembali, pemesanan.status, pemesanan.diskon, karyawan.id_user, karyawan.nama, konsumen.id_konsumen, konsumen.nama_konsumen, detail_pemesanan.kode_produk, detail_pemesanan.harga, detail_pemesanan.jumlah, detail_pemesanan.total_harga, detail_pemesanan.tanggal_ambil, detail_pemesanan.keterangan, produk.nama_produk from pemesanan join konsumen on pemesanan.id_konsumen=konsumen.id_konsumen join karyawan on pemesanan.id_user=karyawan.id_user join detail_pemesanan on detail_pemesanan.no_pemesanan=pemesanan.no_pemesanan join produk on produk.kode_produk=detail_pemesanan.kode_produk where pemesanan.no_pemesanan = $P{nota}]]>
+	</queryString>
+	<field name="no_pemesanan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_pemesanan" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_item" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bayar_awal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kurang" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_pembayaran" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kembali" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="diskon" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_user" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_konsumen" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_konsumen" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kode_produk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_ambil" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="keterangan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_produk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="no_pemesanan">
+		<groupExpression><![CDATA[$F{no_pemesanan}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="187" height="19" uuid="54c1f9cf-5ac7-438c-a99d-7d8fb615a2d3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bauhaus 93" size="13"/>
+				</textElement>
+				<text><![CDATA[GRIYA SRIKANDI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="24" width="187" height="27" uuid="271735c6-8bd0-4a02-a0d4-c44f0df2cbde"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Perum Kopian Barat, Jl. Argopuro No.23, Ketapang, Kec. Kademangan, Kota Probolinggo, Jawa Timur 67222 
++62 852-5938-5454]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="45" y="0" width="40" height="9" uuid="34298541-88d9-4f6d-8d17-55b646f9efd2"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_pemesanan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="16" width="40" height="8" uuid="6ffa50a2-4ac0-49cc-be25-774a87632726"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="0" width="43" height="9" uuid="f9ac9b38-6391-4c11-b275-c56db6b51fb3"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_pemesanan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="16" width="43" height="8" uuid="2fe0cd4b-3062-47c3-af25-8dbb98417d41"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_konsumen}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="102" y="16" width="42" height="8" uuid="fd0a60c0-6411-48ec-a1ff-cead4095a816"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Konsumen:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="45" height="9" uuid="09624f70-698d-4d6e-a1be-79102415b72f"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[No. Pemesanan:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="16" width="45" height="8" uuid="0889b874-b30a-4349-ae91-f96cdf423e4c"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Kasir: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="102" y="0" width="42" height="9" uuid="d131446b-d8cb-4aac-8d90-c35697e128d3"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Tgl. Pesan:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="14" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="8" width="187" height="1" uuid="1104aa98-72d4-4fbb-9f21-8dc23f52b898"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="187" height="1" uuid="4f6f9328-99e9-40bd-aebc-e05cf873052b"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="37" height="8" uuid="2c35bdf7-eb81-420f-8e48-e00718d70fb9"/>
+				<textElement textAlignment="Left">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_produk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="37" y="0" width="48" height="8" uuid="9ca240c2-f753-4c2e-a168-e978cde19c9b"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tanggal_ambil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="6" y="8" width="31" height="8" uuid="3fa0913d-fa72-42bc-afe2-0db32bf9c466"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="0" width="35" height="8" uuid="dc8cf549-d520-4429-a1dd-ad08292547a8"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="0" width="36" height="8" uuid="3371c9c4-8b04-48d1-b36e-3125ef0ed787"/>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_harga}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="8" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="104" splitType="Stretch">
+			<textField>
+				<reportElement x="102" y="0" width="66" height="19" uuid="c4e682e9-b528-4133-b6f9-b914ba712e14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_pembayaran}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="0" width="72" height="19" uuid="1b679692-7ff7-4fc5-934a-c9ef15770bb7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Grand Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="137" y="35" width="47" height="8" uuid="84a589df-5719-45b0-8ed3-f3d4ff6a4031"/>
+				<textElement textAlignment="Right">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bayar_awal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="60" width="47" height="8" uuid="3866df87-6ba9-4008-b276-806a8f863589"/>
+				<textElement textAlignment="Right">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kurang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="72" width="47" height="8" uuid="551f4959-e7ea-4184-9f11-5ab33ca27b15"/>
+				<textElement textAlignment="Right">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="47" width="47" height="8" uuid="7f9b8f78-e444-4613-bfd3-672fbdfee346"/>
+				<textElement textAlignment="Right">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{diskon}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="85" y="72" width="52" height="8" uuid="a685b30e-b9db-4bff-8560-0246735d23fd"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Status Pelunasan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="35" width="52" height="8" uuid="8526a862-5d22-47f2-ba81-3f08d4aa52eb"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Bayar Awal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="47" width="52" height="8" uuid="af79abfb-7f02-4fd9-a30d-04a44815bb5a"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Diskon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="60" width="52" height="8" uuid="02f652a2-d9e5-4a09-8983-b2d70f8bf668"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Kurang]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="187" height="1" uuid="6c5c1825-4b0f-4b93-a67c-965021b48e11"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
